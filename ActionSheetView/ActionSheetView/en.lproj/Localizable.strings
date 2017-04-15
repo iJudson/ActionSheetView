@@ -5,3 +5,23 @@
   Created by 陈恩湖 on 2017/4/15.
   Copyright © 2017年 Judson. All rights reserved.
 */
+
+// ActionSheet 文本
+ActionSheet_Cancel = "取消";
+ActionSheet_Agree = "好的";
+ActionSheet_Edit = "编辑";
+ActionSheet_Share = "分享";
+ActionSheet_Delete = "删除";
+ActionSheet_Reply = "回复";
+ActionSheet_Back = "返回";
+ActionSheet_Image_Recognize = "识别二维码或链接";
+ActionSheet_Image_Save = "存储图片";
+ActionSheet_Image_SaveSuccess = "存储图片成功";
+ActionSheet_Image_SaveFailure = "存储图片失败";
+ActionSheet_ImageURL_Paste = "拷贝";
+AlertView_Confirm = "确定";
+AlertView_Cancel = "取消";
+ActionSheet_ExitLogin = "退出登录";
+ActionSheet_TokenPhoto = "拍照";
+ActionSheet_FetchPhotosFromAlbum = "从手机相册选取";
+ActionSheet_Report = "举报";
