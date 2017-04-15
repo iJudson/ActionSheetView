@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "显示"; ObjectID = "Bbq-EE-vq4"; */
+"Bbq-EE-vq4.normalTitle" = "显示";
+
+/* Class = "UIButton"; normalTitle = "显示"; ObjectID = "Fds-St-ZNX"; */
+"Fds-St-ZNX.normalTitle" = "显示";
+
+/* Class = "UINavigationItem"; title = "显示控件"; ObjectID = "KqY-ez-j4v"; */
+"KqY-ez-j4v.title" = "显示控件";
+
+/* Class = "UILabel"; text = "中央提示栏模块"; ObjectID = "Oqh-Ey-lV3"; */
+"Oqh-Ey-lV3.text" = "中央提示栏模块";
+
+/* Class = "UILabel"; text = "底部提示栏"; ObjectID = "kL6-oL-Po0"; */
+"kL6-oL-Po0.text" = "底部提示栏";
