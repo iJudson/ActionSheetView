@@ -11,7 +11,6 @@ static let clickProfileCenterActionSheetItem = #selector(ActionSheetViewControll
 
 }
 
-
 import UIKit
 
 class ActionSheetViewController: UIViewController {
@@ -23,7 +22,7 @@ class ActionSheetViewController: UIViewController {
     @IBOutlet weak var bottomSheetButton5: UIButton!
     @IBOutlet weak var bottomSheetButton6: UIButton!
 
-    
+    // MARK: 初始化控制器界面
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeSubViews()
@@ -45,8 +44,9 @@ class ActionSheetViewController: UIViewController {
             object.tag = index // 为 button 指定一个 tag （from 0 to 5）
         }
     }
-    
 
+    
+    // 点击显示提示栏
     @IBAction func showHintViewAction(_ sender: UIButton) {
         
         switch sender.tag {
@@ -73,6 +73,8 @@ class ActionSheetViewController: UIViewController {
         }
     }
     
+    
+    // MARK: 显示提示栏
     fileprivate func showEditMenuActionSheet(actionType: SourceControlType) {
         NotificationCenter.default.addObserver(self, selector: .clickProfileCenterActionSheetItem, name: NSNotification.Name(rawValue: "ActionSheetClickedNotification"), object: nil)
         
@@ -87,6 +89,7 @@ class ActionSheetViewController: UIViewController {
         }
     }
     
+    // 显示提示栏的点击事件
     @objc fileprivate func clickActionSheetItem(_ notification: NSNotification) {
         guard let notificationObject = notification.object as? ActionSheetItemType else {
             return

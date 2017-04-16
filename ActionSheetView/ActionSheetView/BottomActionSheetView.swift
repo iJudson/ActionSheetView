@@ -14,9 +14,9 @@ private extension Selector {
     
 }
 
-enum SourceControlType {
-    case setting
-    case profileEditPhotoToken
+enum SourceControlType { // 所有的提示栏的样式
+    case setting // 提示栏的 items 有：退出登录、取消
+    case profileEditPhotoToken  // 提示栏的 items 有：拍照、从相册中选取、取消
     case deletedComment
     case handledComment
     case handledProfileRecommendComment
@@ -26,7 +26,7 @@ enum SourceControlType {
     case editProfileCenter
 }
 
-enum ActionSheetItemType: String {
+enum ActionSheetItemType: String { // 所有的提示的栏的 items
     case recognizedPhoto = "识别二维码或链接"
     case exitLogin = "退出登录"
     case tokenPhotos = "拍照"
@@ -86,6 +86,7 @@ class BottomActionSheetView: UIView {
         cancelButton.alpha = 0.8
     }
     
+    // 初始化提示栏 绘制所有 items
     func initialSheetViewItems(_ sourceControlType: SourceControlType, compeltionHandler: ((Bool) -> Void)? = nil) {
         
         switch sourceControlType {
@@ -142,7 +143,7 @@ class BottomActionSheetView: UIView {
         compeltionHandler?(contentViewHeight != 0)
     }
     
-    fileprivate func addActionSheetItems(_ itemsTitle: [String], textColor: UIColor) {
+    fileprivate func addActionSheetItems(_ itemsTitle: [String], textColor: UIColor) { // 添加提示栏的 items
         let itemCount = itemsTitle.count + 1
         contentViewHeight = CGFloat(itemCount) * itemHeight
         contentView.frame = CGRect(x: 0, y: screenHeight, width: frame.size.width, height: contentViewHeight)
@@ -184,11 +185,11 @@ class BottomActionSheetView: UIView {
 // MARK: 点击方法
 extension BottomActionSheetView {
     
-    @objc fileprivate func clickActionSheetItem(_ button: UIButton) {
+    @objc fileprivate func clickActionSheetItem(_ button: UIButton) { // 所有的点击事件
         guard let titleLabel = button.titleLabel, let titleText = titleLabel.text else {
             return
         }
-        hideSheetView()
+        hideSheetView() // 逻辑：首先隐藏提示栏 后续响应点击事件
         switch titleText {
         case "识别二维码或链接":
             actionItemType = .recognizedPhoto
@@ -233,7 +234,7 @@ extension BottomActionSheetView {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ActionSheetClickedNotification"), object: actionItemType)
     }
     
-    fileprivate func hideSheetView() {
+    fileprivate func hideSheetView() { // 隐藏提示栏
         UIView.animate(withDuration: 0.4, animations: {
             self.backgroundGrayView.alpha = 0.0
             self.contentView.frame.origin.y = self.frame.size.height
@@ -242,7 +243,7 @@ extension BottomActionSheetView {
         })
     }
     
-    @objc fileprivate func clickBackgroundGrayView() {
+    @objc fileprivate func clickBackgroundGrayView() { // 点击背景蒙板
         clickBackgroundGrayViewAction?()
         hideSheetView()
     }
